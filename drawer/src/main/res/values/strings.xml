@@ -1,3 +1,4 @@
 <resources>
-    <string name="applicationTitle">Android tutorials</string>
+    <string name="application_title">Android tutorials</string>
+    <string name="accessibility_toolbar_button_search">Toolbar item search</string>
 </resources>
