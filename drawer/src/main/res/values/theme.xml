@@ -3,7 +3,7 @@
 
     <style name="Theme.Material.Toolbar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:paddingRight">10dp</item>
-        <item name="android:textColorPrimary">@color/primary_light</item>
+        <item name="android:textColorPrimary">@color/text_and_icons</item>
     </style>
 
     <style name="toolbarNavigationIconStyle" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">

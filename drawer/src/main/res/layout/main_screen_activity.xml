@@ -14,4 +14,19 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/navigationDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <ListView android:id="@+id/navigationDrawerItems"
+                  android:layout_width="240dp"
+                  android:layout_height="match_parent"
+                  android:layout_gravity="start"
+                  android:choiceMode="singleChoice"
+                  android:divider="@color/divider"
+                  android:dividerHeight="0dp"
+                  android:background="@color/primary_light"/>
+    </android.support.v4.widget.DrawerLayout>
 </LinearLayout>
