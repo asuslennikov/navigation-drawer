@@ -83,7 +83,7 @@ public class NavigationDrawerItemsAdapter extends BaseAdapter {
                     holder.textView = (TextView) convertView.findViewById(R.id.listItemText);
                     break;
                 case TYPE_HEADER:
-                    convertView = mInflater.inflate(R.layout.navigation_drawer_header_layout, null);
+                    convertView = mInflater.inflate(R.layout.navigation_drawer_item_header_layout, null);
                     holder.textView = (TextView) convertView.findViewById(R.id.listHeaderText);
                     break;
             }

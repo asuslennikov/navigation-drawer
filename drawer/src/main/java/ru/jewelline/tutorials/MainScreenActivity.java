@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
+import ru.jewelline.tutorials.ui.NavigationDrawerHeader;
 import ru.jewelline.tutorials.ui.NavigationDrawerItem;
 import ru.jewelline.tutorials.ui.NavigationDrawerItemsAdapter;
 
@@ -22,7 +23,8 @@ public class MainScreenActivity extends AppCompatActivity {
     private DrawerLayout mNavigationDrawer = null;
     private ActionBarDrawerToggle mNavigationDrawerToggle = null;
     private ListView mNavigationDrawerListView = null;
-    private NavigationDrawerItemsAdapter mNavigationDrawerAdapter;
+    private NavigationDrawerItemsAdapter mNavigationDrawerAdapter = null;
+    private NavigationDrawerHeader mNavigationDrawerHeader = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,10 +34,13 @@ public class MainScreenActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.mainScreenToolbar);
         mNavigationDrawer = (DrawerLayout) findViewById(R.id.navigationDrawer);
         mNavigationDrawerListView = (ListView) findViewById(R.id.navigationDrawerItems);
+        View navigationDrawerHeaderView = getLayoutInflater().inflate(R.layout.navigation_drawer_header, null);
+        mNavigationDrawerHeader = new NavigationDrawerHeader(navigationDrawerHeaderView);
 
         initializeToolbar();
         initializeNavigationDrawer();
         initializeNavigationDrawerListView();
+        fillNavigationDrawerHeader();
         fillNavigationDrawerItems();
     }
 
@@ -80,6 +85,7 @@ public class MainScreenActivity extends AppCompatActivity {
     private void initializeNavigationDrawerListView() {
         if (mNavigationDrawerListView != null) {
             mNavigationDrawerAdapter = new NavigationDrawerItemsAdapter(this);
+            mNavigationDrawerListView.addHeaderView(mNavigationDrawerHeader.getView(), null, false);
             mNavigationDrawerListView.setAdapter(mNavigationDrawerAdapter);
         }
     }
@@ -143,5 +149,10 @@ public class MainScreenActivity extends AppCompatActivity {
         if (mNavigationDrawerToggle != null) {
             mNavigationDrawerToggle.onConfigurationChanged(newConfig);
         }
+    }
+
+    private void fillNavigationDrawerHeader(){
+        mNavigationDrawerHeader.setUser("Drawery Navigat");
+        mNavigationDrawerHeader.setMail("mail@example.com");
     }
 }
